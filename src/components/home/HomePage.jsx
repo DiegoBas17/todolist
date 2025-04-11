@@ -8,7 +8,8 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [tasks, setTasks] = useState([]);
 
-  const handleToggleCompleted = async (task) => {
+  /* PUT */
+  const handlePutTask = async (task) => {
     const updatedTask = {
       title: task.title,
       description: task.description,
@@ -38,6 +39,7 @@ const HomePage = () => {
       navigate("/login");
       return;
     }
+    /* GET */
     const fetchTasks = async () => {
       try {
         const res = await fetch("http://localhost:3001/tasks/list", {
@@ -75,7 +77,7 @@ const HomePage = () => {
                 <input
                   type="checkbox"
                   checked={task.completed}
-                  onChange={() => handleToggleCompleted(task)}
+                  onChange={() => handlePutTask(task)}
                   className="w-5 h-5 text-green-500"
                 />
               </label>
