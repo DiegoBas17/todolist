@@ -67,7 +67,7 @@ const HomePage = () => {
         {tasks.map((task) => (
           <div
             key={task.id}
-            className="bg-white p-4 rounded shadow-md border border-gray-200 hover:shadow-lg transition"
+            className="bg-white p-4 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition"
           >
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-bold">{task.title}</h2>
