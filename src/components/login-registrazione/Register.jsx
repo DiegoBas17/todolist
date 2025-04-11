@@ -16,15 +16,11 @@ const Register = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }), // Passa direttamente username e password
+        body: JSON.stringify({ username, password }),
       });
-
       if (!res.ok) throw new Error("Registrazione fallita");
-
       const data = await res.json();
       console.log("Dati ricevuti dal backend:", data);
-
-      // Dopo una registrazione riuscita, puoi fare il redirect alla pagina di login
       navigate("/login");
     } catch (error) {
       console.error("Errore nella registrazione:", error);
